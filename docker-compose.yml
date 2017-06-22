@@ -27,7 +27,7 @@ services:
       - ./config/plugins:/var/lib/grafana/plugins
       - grafana_data:/var/lib/grafana
     env_file:
-      - config.env
+      - ./config.env
     networks:
       - back-tier
       - front-tier

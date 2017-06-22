@@ -8,4 +8,6 @@ RUN apt-get update && \
 COPY entrypoint.sh .
 RUN chmod +x entrypoint.sh
 
+RUN rm -rf /var/lib/grafana/.init
+
 ENTRYPOINT ["./entrypoint.sh"]

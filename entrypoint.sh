@@ -12,11 +12,13 @@ if [ ! -f "/var/lib/grafana/.init" ]; then
     exec /run.sh $@ &
 
     until curl -s "$url/api/datasources" 2> /dev/null; do
-        sleep 1
+      echo "Waiting for the URL to be available: $url"
+      sleep 1
     done
 
     for datasource in /etc/grafana/datasources/*; do
-        post "$(envsubst < $datasource)" "/api/datasources"
+      echo installed $datasource;
+      post "$(envsubst < $datasource)" "/api/datasources"
     done
 
 #    for dashboard in /etc/grafana/dashboards/*; do

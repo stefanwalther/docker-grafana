@@ -1,5 +1,5 @@
 {
-  "name": "datasource",
+  "name": "InfluxDb",
   "type": "influxdb",
   "url": "http://localhost:8086",
   "access": "direct",
