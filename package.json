@@ -1,0 +1,26 @@
+{
+  "name": "docker-grafana",
+  "version": "0.1.0",
+  "description": "Grafana Docker image for easy initialization of Grafana.",
+  "scripts": {
+    "docs": "docker run --rm -v ${PWD}:/opt/verb stefanwalther/verb",
+    "docs:watch": "nodemon --config ./nodemon.json --exec 'yarn' docs",
+    "d-build": "docker build -t stefanwalther/grafana .",
+    "d-run": "docker run -it stefanwalther/grafana /bin/bash",
+    "test": "cd test && sh test.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stefanwalther/docker-grafana.git"
+  },
+  "keywords": [
+    "Grafana",
+    "Docker"
+  ],
+  "author": "Stefan Walther <swr.nixda@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stefanwalther/docker-grafana/issues"
+  },
+  "homepage": "https://github.com/stefanwalther/docker-grafana#readme"
+}

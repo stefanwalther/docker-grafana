@@ -1,0 +1,35 @@
+version: '3.1'
+
+volumes:
+    grafana_data: {}
+
+networks:
+  front-tier:
+    driver: bridge
+  back-tier:
+    driver: bridge
+
+services:
+
+  grafana:
+#    image: stefanwalther/grafana
+    build:
+      context: ./
+      dockerfile: Dockerfile
+#    container_name: grafana
+    ports:
+      - 3000:3000
+    volumes:
+      - ./entrypoint.sh:/app/entrypoint.sh
+      - ./config/grafana.ini:/etc/grafana/grafana.ini
+      - ./config/dashboards:/var/lib/grafana/dashboards
+      - ./config/datasources:/var/lib/grafana/datasources
+      - ./config/plugins:/var/lib/grafana/plugins
+      - grafana_data:/var/lib/grafana
+    env_file:
+      - config.env
+    networks:
+      - back-tier
+      - front-tier
+#    entrypoint:
+#      - sh /app/entrypoint.sh

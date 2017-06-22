@@ -1,0 +1,10 @@
+{
+  "name": "datasource",
+  "type": "influxdb",
+  "url": "http://localhost:8086",
+  "access": "direct",
+  "user": "$INFLUXDB_USER",
+  "password": "$INFLUXDB_PASSWORD",
+  "database": "$INFLUXDB_DB",
+  "basicAuth": false
+}
