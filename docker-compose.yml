@@ -23,7 +23,7 @@ services:
       - ./entrypoint.sh:/app/entrypoint.sh
       - ./config/grafana.ini:/etc/grafana/grafana.ini
       - ./config/dashboards:/var/lib/grafana/dashboards
-      - ./config/datasources:/var/lib/grafana/datasources
+      - ./config/datasources:/etc/grafana/datasources
       - ./config/plugins:/var/lib/grafana/plugins
       - grafana_data:/var/lib/grafana
     env_file:
