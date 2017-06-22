@@ -1,7 +1,7 @@
 {
   "name": "docker-grafana",
   "version": "0.1.0",
-  "description": "Grafana Docker image for easy initialization of Grafana.",
+  "description": "Grafana Docker image for easy initialization of Grafana (datasource, dashboards & plugins).",
   "scripts": {
     "docs": "docker run --rm -v ${PWD}:/opt/verb stefanwalther/verb",
     "docs:watch": "nodemon --config ./nodemon.json --exec 'yarn' docs",

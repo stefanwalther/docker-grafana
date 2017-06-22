@@ -16,7 +16,7 @@ if [ ! -f "/var/lib/grafana/.init" ]; then
       sleep 1
     done
 
-    for datasource in /etc/grafana/datasources/*; do
+    for datasource in /var/lib/grafana/datasources/*; do
       echo installed $datasource;
       post "$(envsubst < $datasource)" "/api/datasources"
     done
