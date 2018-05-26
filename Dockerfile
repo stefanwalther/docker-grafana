@@ -8,6 +8,8 @@ RUN apt-get update && \
 COPY entrypoint.sh .
 RUN chmod +x entrypoint.sh
 
+# Todo: Just for debugging purposes, can be removed
+# Make sure that the init flag is not there
 RUN rm -rf /var/lib/grafana/.init
 
 ENTRYPOINT ["./entrypoint.sh"]
