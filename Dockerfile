@@ -1,4 +1,4 @@
-FROM grafana/grafana:4.6.4
+FROM grafana/grafana:4.6.5
 MAINTAINER Stefan Walther <swrnixda@gmail.com>
 
 RUN apt-get update && \
